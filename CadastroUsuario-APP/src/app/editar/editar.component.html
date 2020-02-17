@@ -1,0 +1,72 @@
+<div class="container">
+  <form [formGroup]="UsuarioForm">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Nome</label>
+          <input type="text" class="form-control" formControlName="Nome" required minlength="4" id="nome" [ngClass]="{ 'is-invalid': submitted && form.Nome.errors }" />
+          <div *ngIf="submitted && form.Nome.errors" class="invalid-feedback">
+            <div *ngIf="form.Nome.errors.required">Nome é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.Email.errors }"  />
+          <div *ngIf="submitted && form.Email.errors" class="invalid-feedback">
+            <div *ngIf="form.Email.errors.required">Email é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Cpf</label>
+          <input type="text" class="form-control" formControlName="CPF" [ngClass]="{ 'is-invalid': submitted && form.CPF.errors }" />
+          <div *ngIf="submitted && form.CPF.errors" class="invalid-feedback">
+            <div *ngIf="form.CPF.errors.required">CPF é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Data de Nascimento</label>
+          <input type="date" class="form-control"  formControlName="DataNascimento" [ngClass]="{ 'is-invalid': submitted && form.DataNascimento.errors }" />
+          <div *ngIf="submitted && form.DataNascimento.errors" class="invalid-feedback">
+            <div *ngIf="form.DataNascimento.errors.required">Data de Nascimento é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Cidade</label>
+          <input type="text" class="form-control"  formControlName="Cidade" [ngClass]="{ 'is-invalid': submitted && form.Cidade.errors }" />
+          <div *ngIf="submitted && form.Cidade.errors" class="invalid-feedback">
+            <div *ngIf="form.Cidade.errors.required">Cidade é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Cep</label>
+          <input type="text" class="form-control"  formControlName="Cep" [ngClass]="{ 'is-invalid': submitted && form.Cep.errors }" />
+          <div *ngIf="submitted && form.Cep.errors" class="invalid-feedback">
+            <div *ngIf="form.Cep.errors.required">Cep é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="">Estado</label>
+          <input type="text" class="form-control" formControlName="Estado" [ngClass]="{ 'is-invalid': submitted && form.Estado.errors }" />
+          <div *ngIf="submitted && form.Estado.errors" class="invalid-feedback">
+            <div *ngIf="form.Estado.errors.required">Estado é obrigatório.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+          <button class="btn btn-outline-primary btn-block" (click)="onSubmit()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
